@@ -2,6 +2,10 @@
 
 chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 
+# to simulate suid attack
+cp /bin/bash /bin/bashroot
+chmod +s /bin/bashroot
+
 echo '[+] Starting mysql...'
 service mysql start
 
